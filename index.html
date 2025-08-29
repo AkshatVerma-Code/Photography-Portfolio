@@ -151,25 +151,95 @@
     }
 
     /* Hero */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url('Sample/myimg.jpg') center/cover no-repeat;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('Sample/myimg.jpg') center/cover no-repeat;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
-.hero h2 {
-  font-size: 3rem;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
-}
+    .hero h2 {
+      font-size: 3rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
 
+    /* Existing CSS ... */
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      header h1 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        margin: 5px 10px;
+        font-size: 14px;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+        padding: 15px;
+      }
+
+      .gallery-section {
+        padding: 60px 20px 20px;
+      }
+
+      .gallery img {
+        height: 200px;
+      }
+
+      .contact {
+        padding: 40px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 8px 15px;
+      }
+
+      header h1 {
+        font-size: 16px;
+      }
+
+      nav a {
+        margin: 5px;
+        font-size: 12px;
+      }
+
+      .hero h2 {
+        font-size: 1.6rem;
+        padding: 10px;
+      }
+
+      .gallery img {
+        height: 160px;
+      }
+
+      .contact h2 {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 
@@ -221,8 +291,9 @@
   <!-- Contact -->
   <section id="contact" class="contact">
     <h2>More Work</h2>
-    <p>View Full Gallery on Google Drive: 
-      <a href="https://drive.google.com/drive/folders/1mfR4UEGSs2f8PUbIsUleO2EvhqG4j5pI" target="_blank">Akshat Verma</a>
+    <p>View Full Gallery on Google Drive:
+      <a href="https://drive.google.com/drive/folders/1mfR4UEGSs2f8PUbIsUleO2EvhqG4j5pI" target="_blank">Akshat
+        Verma</a>
     </p>
   </section>
 
@@ -253,23 +324,24 @@
       lightbox.style.display = 'none';
     });
     // Hero Scroll Effect
-const hero = document.querySelector('.hero');
+    const hero = document.querySelector('.hero');
 
-window.addEventListener('scroll', () => {
-  let scrollY = window.scrollY;
-  let heroHeight = hero.offsetHeight;
+    window.addEventListener('scroll', () => {
+      let scrollY = window.scrollY;
+      let heroHeight = hero.offsetHeight;
 
-  if (scrollY < heroHeight) {
-    // Calculate fade & shrink
-    let opacity = 1 - scrollY / (heroHeight * 0.7);
-    let scale = 1 - scrollY / (heroHeight * 2.5);
+      if (scrollY < heroHeight) {
+        // Calculate fade & shrink
+        let opacity = 1 - scrollY / (heroHeight * 0.7);
+        let scale = 1 - scrollY / (heroHeight * 2.5);
 
-    hero.style.opacity = opacity;
-    hero.style.transform = `scale(${scale})`;
-  }
-});
+        hero.style.opacity = opacity;
+        hero.style.transform = `scale(${scale})`;
+      }
+    });
 
   </script>
 
 </body>
+
 </html>
